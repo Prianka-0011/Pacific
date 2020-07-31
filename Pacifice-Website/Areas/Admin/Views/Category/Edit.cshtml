@@ -1,0 +1,41 @@
+﻿@model Pacifice_Website.Models.Category
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form asp-action="Edit" method="post">
+    <div class="border p-4 rounded">
+        <div class="row">
+            <div class="col-md-8">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group row">
+                    <div class="col-md-5">
+                        <input type="hidden" asp-for="Id" />
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-5">
+                        <label asp-for="Status"></label>
+                        <input  asp-for="Status" type="checkbox" class="form-control" />
+                        
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-8">
+                        <button class="btn btn-info" type="submit">UpDate</button>
+                        <a asp-action="Index" class="btn btn-info" type="submit">Back To List</a>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+
+    </div>
+
+</form>
+

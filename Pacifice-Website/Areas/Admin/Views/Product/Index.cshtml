@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Pacifice_Website.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+    int i = 1;
+}
+
+@*<form asp-action="Index" method="post">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <input class="form-control" name="srcText" value="@ViewBag.srcText" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <button class="btn btn-info" type="submit">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 pull-right">
+            <a asp-action="Create" class="btn btn-success">Create New</a>
+        </div>
+    </div>
+</form>*@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <div class="card-header">
+                <span class=" text-warning font-weight-normal"><b>Manage Product </b></span>
+            </div>
+            <div class="table-responsive">
+                @if (Model != null)
+                {
+
+                    <table class=" table border-top-0 table-bordered m-3 table-striped font-weight-normal">
+                        <thead style="font-size:12px">
+                            <tr>
+                                <th>#</th>
+                                <th>Category Name</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Model</th>
+                                <th>Grad</th>
+                                <th>CarCC</th>
+                                <th>Seating</th>
+                                <th>Fuel</th>
+                                <th>Condition</th>
+                                <th>Color</th>
+                                
+                                <th>Transmission</th>
+                                <th>Option</th>
+                                <th>Year</th>
+                                <th>Image</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size:11px">
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@item.Category.Name</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Price</td>
+                                    <td>@item.Model</td>
+                                    <td>@item.Grade</td>
+                                    <td>@item.CarCc</td>
+                                    <td>@item.Seating</td>
+                                    <td>@item.Fuel</td>
+                                    <td>@item.Condition</td>
+                                    <td>@item.Color</td>
+                                    <td>@item.Transmission</td>
+                                    <td>@item.Option</td>
+                                    <td>@item.Year</td>
+                                    <td><img src="~/@item.Image"  style="height:50px;width:50px; border-radius:25px" /></td>
+                                    @if (item.Status)
+                                    {
+                                <td class="text-success">Enable</td>
+                                    }
+                                    else
+                                    {
+                                <td class="text-warning">Disable</td>
+                                    }
+
+                                    <partial name="_ButtonPartial" model="@item.Id" />
+                                </tr>
+                                i++;
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>

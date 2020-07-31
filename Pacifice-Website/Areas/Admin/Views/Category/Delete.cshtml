@@ -1,0 +1,31 @@
+﻿@model Pacifice_Website.Models.Category
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="border p-4 rounded">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group row">
+                <div class="col-md-5">
+                    <label asp-for="Name"></label>
+                    <input readonly="readonly" asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                    <a asp-action="Index" class="btn btn-dark">Back To List</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync(partialViewName: "_ValidationScriptsPartial.cshtml");
+    }
+}
