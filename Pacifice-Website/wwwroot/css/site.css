@@ -1,30 +1,35 @@
-﻿/*Registe + Login Page Css*/
-
-
-
-
-
-
-
-
-
+﻿/*start Registe + Login Page Css*/
+.hero {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/css/image/banner.jpg);
+    background-position:center;
+    background-size:cover;
+    position:absolute;
+}
+.form-box {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    margin: 6% auto;
+}
+.button-box {
+    width: 600px;
+    margin: 35px auto;
+    position: relative;
+    background-color: aliceblue;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+/*Registe + Login Page Css*/
 .bg-mattBlackLight {
     background-color: rgb(10, 0, 26);
     box-shadow: #290066;
 }
 
 .sidemenuToggler i {
-    /*margin-top:1rem;
-    margin-bottom:0rem;*/
     color: aliceblue;
 }
-/*label .collap i {
-    margin-top: 1.1rem;
-}*/
-
-/*.navbar-brand {
-    margin-top: 10px;
-}*/
 .navbar-brand h3 {
     color: floralwhite;
     text-transform: uppercase;

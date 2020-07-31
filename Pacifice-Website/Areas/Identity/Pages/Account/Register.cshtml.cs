@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Pacifice_Website.Data;
 
 namespace Pacifice_Website.Areas.Identity.Pages.Account
 {
@@ -19,17 +20,19 @@ namespace Pacifice_Website.Areas.Identity.Pages.Account
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly ApplicationDbContext _context;
 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender, ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _context = context;
         }
 
         [BindProperty]
@@ -39,6 +42,15 @@ namespace Pacifice_Website.Areas.Identity.Pages.Account
 
         public class InputModel
         {
+
+            [Required]
+
+            [Display(Name = "FullName")]
+            public string FullName { get; set; }
+            [Required]
+
+            [Display(Name = "UserName")]
+            public string UserName { get; set; }
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -65,8 +77,8 @@ namespace Pacifice_Website.Areas.Identity.Pages.Account
         {
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
-            {
-                var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
+            { 
+                var user = new IdentityUser { UserName = Input.UserName, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
@@ -95,4 +107,5 @@ namespace Pacifice_Website.Areas.Identity.Pages.Account
             return Page();
         }
     }
+
 }

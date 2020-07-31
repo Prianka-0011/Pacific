@@ -50,8 +50,11 @@
                     <li class="nav-item"> <a asp-area="Admin" asp-controller="Product" asp-action="Index" class="nav-link"><i class="fab fa-windows icon"></i><span class="text">Dashboard</span></a></li>
                     <li class="nav-item"> <a asp-area="Admin" asp-controller="Product" asp-action="Create" class="nav-link"><i class="fas fa-user icon"></i><span class="text">User</span></a></li>
                     <li class="nav-item">  <a asp-area="Admin" asp-controller="Product" asp-action="Create" class="nav-link"><i class="fas fa-user icon"></i><span class="text">Product</span></a></li>
-                    <li class="nav-item"> <a href="#" class="nav-link"><i class="fas fa-list-alt icon"></i><span class="text">Category</span></a></li>
+                    <li class="nav-item"> <a asp-area="Admin" asp-controller="Category" asp-action="Create" class="nav-link"><i class="fas fa-list-alt icon"></i><span class="text">Category</span></a></li>
                     <li class="nav-item"> <a href="#" class="nav-link"><i class="fas fa-user-tag icon"></i><span class="text">Role</span></a></li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                    </li>
                 </ul>
             </div>
         </div>

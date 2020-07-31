@@ -90,20 +90,21 @@ namespace Pacifice_Website.Areas.Admin.Controllers
                         string filePath = Path.Combine(uploadsFolder, uniqueFileNAme);
                         await image.CopyToAsync(new FileStream(filePath, FileMode.Create));
                         var imagPath = new Image();
-                        imagPath.Name = image.FileName;
+                        imagPath.Name = "images/"+ uniqueFileNAme;
                         imagPath.ProductId = product.Id;
                         _context.Image.Add(imagPath);
                         //product.Image= "Images/" + uniqueFileNAme;
                     }
                 }
+                string uniqueFileNameForImage = null;
                 if (productVm.Image!=null)
                 {
 
                     string uploadsFolder = Path.Combine(_hosting.WebRootPath, "images");
-                    uniqueFileNAme = Guid.NewGuid().ToString() + "_" + productVm.Image.FileName;
-                    string filePath = Path.Combine(uploadsFolder, uniqueFileNAme);
+                    uniqueFileNameForImage = Guid.NewGuid().ToString() + "_" + productVm.Image.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileNameForImage);
                     await productVm.Image.CopyToAsync(new FileStream(filePath, FileMode.Create));
-                    product.Image = "Images/" + uniqueFileNAme;
+                    product.Image = "images/" + uniqueFileNameForImage;
                 }
               
                 
@@ -213,21 +214,23 @@ namespace Pacifice_Website.Areas.Admin.Controllers
                         string filePath = Path.Combine(uploadsFolder, uniqueFileNAme);
                         await image.CopyToAsync(new FileStream(filePath, FileMode.Create));
                         var imagPath = new Image();
-                        imagPath.Name = image.FileName;
+                        imagPath.Name = "images/" + uniqueFileNAme;
                         imagPath.ProductId = productVm.Id;      
                        
                         _context.Image.Add(imagPath);
-                        product.Image = "Images/" + uniqueFileNAme;
+                        product.Image = "images/" + uniqueFileNAme;
+                        await _context.SaveChangesAsync();
                     }
                 }
+                string uniqueFileNameForImage = null;
                 if (productVm.Image != null)
                 {
 
                     string uploadsFolder = Path.Combine(_hosting.WebRootPath, "images");
-                    uniqueFileNAme = Guid.NewGuid().ToString() + "_" + productVm.Image.FileName;
-                    string filePath = Path.Combine(uploadsFolder, uniqueFileNAme);
+                    uniqueFileNameForImage = Guid.NewGuid().ToString() + "_" + productVm.Image.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileNameForImage);
                     await productVm.Image.CopyToAsync(new FileStream(filePath, FileMode.Create));
-                    product.Image = "Images/" + uniqueFileNAme;
+                    product.Image = "images/" + uniqueFileNameForImage;
                 }
 
                 _context.Product.Update(product);
@@ -316,6 +319,11 @@ namespace Pacifice_Website.Areas.Admin.Controllers
         public async Task<IActionResult> ConfirmDelete(int id)
         {
             var product = _context.Product.FirstOrDefault(c => c.Id == id);
+            var images = _context.Image.Where(c => c.Id == id).ToList();
+            foreach (var image in images)
+            {
+                _context.Image.Remove(image);
+            }
             _context.Product.Remove(product);
            await _context.SaveChangesAsync();            
            return RedirectToAction(nameof(Index));
