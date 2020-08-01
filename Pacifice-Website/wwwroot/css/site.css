@@ -8,24 +8,30 @@
     position:absolute;
 }
 .form-box {
-    width: 600px;
-    height: 600px;
+    width: 380px;
+    height: 480px;
     position: relative;
     margin: 6% auto;
+    background: #fff;
+    padding: 5px;
 }
-.button-box {
+/*.button-box {
     width: 600px;
     margin: 35px auto;
     position: relative;
-    background-color: aliceblue;
     box-shadow: 0 0 20px 9px #ff61241f;
     border-radius: 30px;
-}
-/*Registe + Login Page Css*/
-.bg-mattBlackLight {
-    background-color: rgb(10, 0, 26);
-    box-shadow: #290066;
-}
+}*/
+    .form-box .form-control{
+        height:40px;
+        width:100px;
+        border-radius:5px;
+    }
+    /*Registe + Login Page Css*/
+    .bg-mattBlackLight {
+        background-color: rgb(10, 0, 26);
+        box-shadow: #290066;
+    }
 
 .sidemenuToggler i {
     color: aliceblue;
