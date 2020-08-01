@@ -35,13 +35,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item white-btn active">
-
-                    <a href="#" class="nav-link nav-span"><i class="fas fa-power-off nav-icon"></i><span class="text-white ml-1">LogOut</span></a>
+                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@Url.Page("/", new { area = "" })">
+                        <button type="submit" href="#" class="nav-link nav-span logout-btn"><i class="fas fa-power-off nav-icon"></i><span class="text-white ml-1">LogOut</span></button>
+                    </form>                 
                 </li>
             </ul>
-
         </div>
-
     </nav>
     <div class="wrapper d-flex">
         <div class="sideMenu bg-mattBlackLight">
@@ -58,14 +57,11 @@
                 </ul>
             </div>
         </div>
-
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12 my-3">
-
                         @RenderBody()
-
                     </div>
                 </div>
 

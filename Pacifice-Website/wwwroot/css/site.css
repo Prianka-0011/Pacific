@@ -1,37 +1,112 @@
 ﻿/*start Registe + Login Page Css*/
-.hero {
+html {
+    margin: 0px;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/css/image/banner.jpg);
-    background-position:center;
-    background-size:cover;
-    position:absolute;
+}
+*{
+    margin:0;
+    padding:0;
+}
+.wraper {
+ 
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/css/image/banner2.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
 }
 .form-box {
-    width: 380px;
-    height: 480px;
+    width: 410px;
+    height: auto;
     position: relative;
+    border-radius:30px;
     margin: 6% auto;
-    background: #fff;
+    background: rgba(0, 0, 0, 0.5);
     padding: 5px;
 }
-/*.button-box {
-    width: 600px;
+.button-box {
+    width: 250px;
     margin: 35px auto;
+    color:#fff;
     position: relative;
     box-shadow: 0 0 20px 9px #ff61241f;
     border-radius: 30px;
+}
+    .button-box .toggle-btn {
+        padding: 10px 30px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        color: #fff;
+        outline: none;
+        font-size: 15px;
+        position: relative;
+    }
+#btn{
+    top:0;
+    left:0;
+    position:absolute;
+    width: 110px;
+    height:100%;
+    color:#fff;
+    background:linear-gradient(to right,#ff105f,#ffad06);
+    border-radius:30px;
+    transition:0.5s;
+}
+.form-group label{
+ font-size:13px;
+ color:#fff;
+}
+.form-group input {
+    width: 100%;
+    height: 25px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    color:#fff;
+    background: transparent;
+}
+.form-group .checkbox1 {
+    width: 100%;
+    height: 20px;
+}
+.submit-btn {
+    width: 100%;
+    color: #fff;
+    padding: 5px 20px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right,#ff105f,#ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+/*.form-box .form-control {
+    height: 30px;
+    width: 180px;
+    border-radius: 5px;
 }*/
-    .form-box .form-control{
-        height:40px;
-        width:100px;
-        border-radius:5px;
-    }
-    /*Registe + Login Page Css*/
-    .bg-mattBlackLight {
-        background-color: rgb(10, 0, 26);
-        box-shadow: #290066;
-    }
+/*Registe + Login Page Css End*/
+.navbar-nav .nav-span {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    outline: none;
+    font-size: 15px;
+    position: relative;
+}
+.bg-mattBlackLight {
+    background-color: rgb(10, 0, 26);
+    box-shadow: #290066;
+}
 
 .sidemenuToggler i {
     color: aliceblue;

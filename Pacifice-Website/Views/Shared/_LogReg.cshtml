@@ -30,8 +30,13 @@
     <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
-    <div>
+<body class="wraper">
+    <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+            <a  asp-area="Identity" asp-page="/Account/Login" class="toggle-btn text-decoration-none btn">Sign In</a>
+            <a  asp-area="Identity" asp-page="/Account/Register" class="toggle-btn text-decoration-none btn">Sign Up</a>
+        </div>
         @RenderBody()
     </div>
 
