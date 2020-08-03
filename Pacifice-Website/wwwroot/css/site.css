@@ -1,4 +1,4 @@
-﻿/*start Registe + Login Page Css*/
+﻿
 html {
     margin: 0px;
     height: 100%;
@@ -8,6 +8,8 @@ html {
     margin:0;
     padding:0;
 }
+
+/*start Registe + Login Page Css*/
 .wraper {
  
     height: 100%;
@@ -35,32 +37,69 @@ html {
     box-shadow: 0 0 20px 9px #ff61241f;
     border-radius: 30px;
 }
-    .button-box .toggle-btn {
+    .button-box .toggle-btn1 {
         padding: 10px 30px;
         cursor: pointer;
-        background: transparent;
+        background: linear-gradient(to right,#ff105f,#ffad06);
+        border-radius: 30px;
         border: 0;
         color: #fff;
         outline: none;
         font-size: 15px;
         position: relative;
     }
-#btn{
-    top:0;
-    left:0;
-    position:absolute;
-    width: 110px;
-    height:100%;
-    color:#fff;
-    background:linear-gradient(to right,#ff105f,#ffad06);
-    border-radius:30px;
-    transition:0.5s;
+    .button-box .toggle-btn2 {
+        margin-left: 25px;
+        padding: 10px 30px;
+        cursor: pointer;
+        background: linear-gradient(to right,#ff105f,#ffad06);
+        ;
+        border-radius: 30px;
+        border: 0;
+        color: #fff;
+        outline: none;
+        font-size: 15px;
+        position: relative;
+    }
+/*.toggle-btn3 {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border-radius: 30px;
+    border: 0;
+    color: #fff;
+    outline: none;
+    font-size: 15px;
+    position: relative;
 }
-.form-group label{
+.toggle-btn4 {
+    margin-left: 25px;
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border-radius: 30px;
+    border: 0;
+    color: #fff;
+    outline: none;
+    font-size: 15px;
+    position: relative;
+}*/
+/*.sign {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    color: #fff;
+    background: linear-gradient(to right,#ff105f,#ffad06);
+    border-radius: 30px;
+    transition: 0.5s;
+}*/
+.form-group1 label{
  font-size:13px;
  color:#fff;
 }
-.form-group input {
+.form-group1 input {
     width: 100%;
     height: 25px;
     border-left: 0;
@@ -71,7 +110,7 @@ html {
     color:#fff;
     background: transparent;
 }
-.form-group .checkbox1 {
+.form-group1 .checkbox1 {
     width: 100%;
     height: 20px;
 }
@@ -87,12 +126,8 @@ html {
     outline: none;
     border-radius: 30px;
 }
-/*.form-box .form-control {
-    height: 30px;
-    width: 180px;
-    border-radius: 5px;
-}*/
-/*Registe + Login Page Css End*/
+/*end Registe + Login Page Css*/
+/*navigation bar start*/
 .navbar-nav .nav-span {
     padding: 10px 30px;
     cursor: pointer;
@@ -108,9 +143,7 @@ html {
     box-shadow: #290066;
 }
 
-.sidemenuToggler i {
-    color: aliceblue;
-}
+
 .navbar-brand h3 {
     color: floralwhite;
     text-transform: uppercase;
@@ -138,13 +171,55 @@ html {
     .navbar-custom .nav-link .icon {
         color: rgb(10, 0, 26);
     }
-/*.navbar-custom .nav-link .nav-link:hover .icon,
-    .nav-link:hover .text, .nav-link.active .icon,
-    .nav-link.active .text {
-        color: rgb(10, 0, 26);
-    }*/
+/*navigation bar end*/
 
+/*sidebar  start*/
 
+/*sidebar submenue start*/
+.navbar-nav ul {
+    position: static;
+    display: none;
+}
+
+.navbar-nav .prod-show.show {
+    display: block;
+}
+
+.navbar-nav .cat-show.show1 {
+    display: block;
+}
+
+.navbar-nav ul li {
+    line-height: 42px;
+    border-bottom: none;
+}
+
+.navbar-nav ul a {
+    font-size: 12px;
+    color: #e6e6e6;
+    padding-left: 80px;
+}
+
+.navbar-nav .nav-item .nav-link .down {
+    position: absolute;
+    margin-top: 6px;
+    right: 40px;
+    transform: translate(-50%);
+    font-size: 15px;
+    -webkit-transition: -webkit-transform 0.4s
+}
+
+.navbar-nav .nav-item .prod .first.rotate {
+    transform: translateY(-50%) rotate(-180deg);
+}
+
+.navbar-nav .nav-item .prod .second.rotate1 {
+    transform: translateY(-50%) rotate(-180deg);
+}
+/*sidebar submenue end*/
+.sidemenuToggler i {
+    color: aliceblue;
+}
 @media (max-width: 768px) {
     .navbar-nav {
         display: block;
@@ -222,7 +297,7 @@ body {
     .nav-link .icon {
         margin-right: 0.25rem;
         margin-left: 0.25rem;
-        font-size: 1.875rem;
+        font-size: 0.875rem;
         color: antiquewhite;
         vertical-align: middle;
         height: 2rem;
@@ -255,10 +330,10 @@ body {
     .wrapper.active .sideMenu {
         width: 5rem;
     }
-
-        .wrapper.active .sideMenu .nav-link {
-            text-align: center;
-        }
+    
+    .wrapper.active .sideMenu .nav-link {
+        text-align: center;
+    }
 
             .wrapper.active .sideMenu .nav-link .icon {
                 margin-right: 0;
@@ -267,7 +342,12 @@ body {
             .wrapper.active .sideMenu .nav-link .text {
                 display: none;
             }
-
+        .wrapper.active .sideMenu .prod .down {
+            display: none;
+        }
+        .wrapper.active .sideMenu .prod ul li .hide {
+            display: none;
+        }
     .wrapper.active .content {
         margin-left: 5rem;
     }
@@ -276,3 +356,4 @@ body {
         color: rgb(10, 0, 26);
     }
 }
+/*sidebar  end*/

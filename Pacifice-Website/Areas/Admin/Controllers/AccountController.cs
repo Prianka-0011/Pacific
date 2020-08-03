@@ -68,7 +68,7 @@ namespace Pacifice_Website.Areas.Admin.Controllers
                 {
                     IdentityRole Role = new IdentityRole(RoleName);
                     await _roleManager.CreateAsync(Role);
-                    TempData["create"] = "Role " + RoleName + " Successfully Created";
+                    msg = "Role " + RoleName + " Successfully Created";
 
                 }
                 ViewBag.msg = msg;
@@ -126,11 +126,11 @@ namespace Pacifice_Website.Areas.Admin.Controllers
             {
                 msg = "Invalid User and/or Invalid Role.";
             }
-            TempData["msg"] = msg;
+             TempData["msg"] = msg;
             return RedirectToAction("AssignRole");
 
         }
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public IActionResult RegisteredUserIndex(string returnUrl = null)
         {
             var user = _context.Users.ToList();

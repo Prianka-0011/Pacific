@@ -4,28 +4,32 @@ $(document).ready(function () {
         $('.wrapper').toggleClass('active');
     });
 
-    //var adjustSidebar = function () {
-    //    $('.sidebar').slimScroll({
-    //        height: document.documentElement.clientHeight - $('.navbar').outerHeight()
-    //    });
-    //};
+    $('.prod-btn').click(function () {
+        $('.prod-show').toggleClass("show");
+        $('.first').toggleClass("rotate");
+    });
+    $('.cat-btn').click(function () {
+        $('.cat-show').toggleClass("show1");
+        $('.second').toggleClass("rotate1");
+    });
+   
+    //$('.toggle-btn1').click(function () {
 
-    //adjustSidebar();
-    //$(window).resize(function () {
-    //    adjustSidebar();
+    //    $('.toggle-btn2').toggleClass("toggle-btn3");
+       
     //});
-    //var dropdown = document.getElementsByClassName("dropdown-btn");
-    //var i;
+    //$('.toggle-btn2').click(function () {
 
-    //for (i = 0; i < dropdown.length; i++) {
-    //    dropdown[i].addEventListener("click", function () {
-    //        this.classList.toggle("active");
-    //        var dropdownContent = this.nextElementSibling;
-    //        if (dropdownContent.style.display === "block") {
-    //            dropdownContent.style.display = "none";
-    //        } else {
-    //            dropdownContent.style.display = "block";
-    //        }
-    //    });
-    //}
+    //    $('.toggle-btn1').toggleClass('toggle-btn4');
+
+    //});
 });
+//top: 0;
+//left: 0;
+//position: absolute;
+//width: 110px;
+//height: 100 %;
+//color: #fff;
+//background: linear - gradient(to right, #ff105f, #ffad06);
+//border - radius: 30px;
+//transition: 0.5s;

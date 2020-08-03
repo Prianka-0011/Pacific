@@ -3,36 +3,39 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<form asp-action="Create" method="post">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow mb-4">
+                <div class="card-header bg-info">
+                    <span class=" text-white font-weight-normal"><b>Create New Category </b></span>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 offset-md-4">
+                        <div class="form-group row">
+                            <div class="col-md-5">
+                                <label asp-for="Name"></label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-5">
+                                <label asp-for="Status"></label>
+                                <input asp-for="Status" type="checkbox" />
+                            </div>
+                        </div>
 
-
-<form asp-action="Create" method="post" >
-    <div class="border p-4 rounded">
-        <h1 class="text-center text-danger mb-4">Create New Category</h1>
-
-        <div class="row">
-            <div class="col-md-8 offset-md-4">
-                <div asp-validation-summary="ModelOnly"></div>
-                <div class="form-group row">
-                    <div class="col-md-5">
-                        <label asp-for="Name"></label>
-                        <input asp-for="Name" class="form-control" />
-                        <span asp-validation-for="Name"></span>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-md-5">
-                        <label asp-for="Status"></label>
-                        <input asp-for="Status" type="checkbox" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-md-8 ">
-                        <button class="btn btn-success" type="submit">Save</button>
-                        <a asp-action="Index" class="btn btn-warning ml-2">Back To List</a>
+                    <div class="col-md-3 offset-md-4 ">
+                        <button class="btn btn-success btn btn-sm" type="submit">Save</button>
+                        <a asp-action="Index" class="btn btn-info btn btn-sm ml-1">Back To List</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </form>
+    

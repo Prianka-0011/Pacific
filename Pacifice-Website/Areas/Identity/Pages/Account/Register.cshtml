@@ -6,20 +6,20 @@
 
 
   
-            <div class="row">
+            <div  class="row">
                 <div class="col-md-11 offset-md-1">
-                    <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <form  asp-route-returnUrl="@Model.ReturnUrl" method="post">
                         <div asp-validation-summary="All" class="text-danger"></div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="form-group1">
                                     <label asp-for="Input.FullName"></label>
                                     <input asp-for="Input.FullName"  />
                                     <span asp-validation-for="Input.FullName" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="form-group1">
                                     <label asp-for="Input.UserName"></label>
                                     <input asp-for="Input.UserName"  />
                                     <span asp-validation-for="Input.UserName" class="text-danger"></span>
@@ -29,14 +29,14 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="form-group1">
                                     <label asp-for="Input.Email"></label>
                                     <input asp-for="Input.Email"  />
                                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="form-group1">
                                     <label asp-for="Input.Password"></label>
                                     <input asp-for="Input.Password"  />
                                     <span asp-validation-for="Input.Password" class="text-danger"></span>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="form-group1">
                                     <label asp-for="Input.ConfirmPassword"></label>
                                     <input asp-for="Input.ConfirmPassword"  />
                                     <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-5 offset-md-3 mb-5">
+                            <div class="col-md-5 offset-md-3 mb-5 mt-4">
                                 <button type="submit" class="submit-btn">Register</button>
                             </div>
                         </div>

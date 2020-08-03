@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="utf-8" />
@@ -34,8 +33,9 @@
     <div class="form-box">
         <div class="button-box">
             <div id="btn"></div>
-            <a  asp-area="Identity" asp-page="/Account/Login" class="toggle-btn text-decoration-none btn">Sign In</a>
-            <a  asp-area="Identity" asp-page="/Account/Register" class="toggle-btn text-decoration-none btn">Sign Up</a>
+            <a asp-area="Identity" asp-page="/Account/Login" class="toggle-btn1  text-decoration-none btn">Sign In</a>
+            <a asp-area="Identity" asp-page="/Account/Register" class="toggle-btn2  text-decoration-none btn active">Sign Up</a>
+
         </div>
         @RenderBody()
     </div>

@@ -4,63 +4,54 @@
     int i = 1;
 }
 
-<div class="border p-4 rounded">
-    <h1 class="text-center text-warning mb-5">All Category </h1>
-    <div class="row">
-        <div class="col-md-8">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <input class="form-control" name="srcText" value="" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <button class="btn btn-info" type="submit">Search</button>
-                    </div>
-                </div>
 
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <div class="card-header bg-info ">
+                <span class=" text-white font-weight-normal"><b>Manage Category</b></span>
+            </div>
+            <div class="table-responsive">
+                @if (Model != null)
+                {
+                    <table class="table border-top-0 table-bordered m-3 table-striped font-weight-normal">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td style="width:100px">@i</td>
+                                    <td style="width:100px">@item.Name</td>
+                                    @if (item.Status)
+                                    {
+                                        <td style="width:100px;color:darkgreen">Enable</td>
+                                    }
+                                    else
+                                    {
+                                        <td style="width:100px;color:maroon">Disable</td>
+                                    }
+
+                                    <partial name="_ButtonPartial" model="@item.Id" />
+                                </tr>
+                                i++;
+                            }
+                        </tbody>
+                    </table>
+
+                }
             </div>
         </div>
-        <div class="col-md-4 pull-right">
-            <a asp-action="Create" class="btn btn-success">Create New</a>
-        </div>
     </div>
-    @if (Model != null)
-    {
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                <tr>
-                    <td>@i</td>
-                    <td style="width:200px">@item.Name</td>
-                    @if (item.Status)
-                    {
-                        <td style="width:200px;color:darkgreen">Enable</td>
-                    }
-                    else
-                    {
-                        <td style="width:200px;color:maroon">Disable</td>
-                    }
-
-                    <partial name="_ButtonPartial" model="@item.Id" />
-                </tr>
-                    i++;
-                }
-            </tbody>
-        </table>
-    }
 </div>
 
 
-
-
-<h1>Index</h1>
 

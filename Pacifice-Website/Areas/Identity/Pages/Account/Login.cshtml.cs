@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Pacifice_Website.Data;
 
 namespace Pacifice_Website.Areas.Identity.Pages.Account
 {
@@ -17,11 +18,14 @@ namespace Pacifice_Website.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private ApplicationDbContext _context;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
+
+        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger, ApplicationDbContext context)
         {
             _signInManager = signInManager;
             _logger = logger;
+            _context = context;
         }
 
         [BindProperty]
@@ -77,7 +81,13 @@ namespace Pacifice_Website.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    var user = _context.Users.FirstOrDefault(c => c.UserName == Input.UserName);
+                    var role = _context.UserRoles.FirstOrDefault(c => c.UserId == user.Id);
+                    var roleType = _context.Roles.FirstOrDefault(c => c.Id == role.RoleId);
+                    if (roleType.Name == "Admin")
+                    {
+                        return RedirectToAction("Index", "Product", new { area = "Admin" });
+                    }
                 }
                 if (result.RequiresTwoFactor)
                 {

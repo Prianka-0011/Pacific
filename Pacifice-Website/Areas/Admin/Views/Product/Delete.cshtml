@@ -21,14 +21,14 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label asp-for="CategoryName"></label>
-                                        <input class="form-control" asp-for="CategoryName" asp-items="ViewBag.Category">
+                                        <input readonly="readonly" class="form-control" asp-for="CategoryName" asp-items="ViewBag.Category">
                                         <span asp-validation-for="CategoryName"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group ">
                                         <label asp-for="Name"></label>
-                                        <input asp-for="Name" class="form-control" />
+                                        <input readonly="readonly" asp-for="Name" class="form-control" />
                                         <span asp-validation-for="Name"></span>
                                     </div>
                                 </div>
@@ -38,14 +38,14 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label asp-for="Price"></label>
-                                        <input asp-for="Price" class="form-control" />
+                                        <input readonly="readonly" asp-for="Price" class="form-control" />
                                         <span asp-validation-for="Price"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label asp-for="Model"></label>
-                                        <input asp-for="Model" class="form-control" />
+                                        <input readonly="readonly" asp-for="Model" class="form-control" />
                                         <span asp-validation-for="Model"></span>
                                     </div>
                                 </div>
@@ -54,14 +54,14 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label asp-for="Grade"></label>
-                                        <input asp-for="Grade" class="form-control" />
+                                        <input readonly="readonly" asp-for="Grade" class="form-control" />
                                         <span asp-validation-for="Grade"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label asp-for="CarCc"></label>
-                                        <input asp-for="CarCc" class="form-control" />
+                                        <input readonly="readonly" asp-for="CarCc" class="form-control" />
                                         <span asp-validation-for="CarCc"></span>
                                     </div>
                                 </div>
@@ -70,14 +70,14 @@
                                 <div class="col-md-5">
                                     <div class="form-group ">
                                         <label asp-for="Seating"></label>
-                                        <input asp-for="Seating" class="form-control" />
+                                        <input readonly="readonly" asp-for="Seating" class="form-control" />
                                         <span asp-validation-for="Seating"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group ">
                                         <label asp-for="Fuel"></label>
-                                        <input asp-for="Fuel" class="form-control" />
+                                        <input readonly="readonly" asp-for="Fuel" class="form-control" />
                                         <span asp-validation-for="Fuel"></span>
                                     </div>
                                 </div>
@@ -86,14 +86,14 @@
                                 <div class="col-md-5">
                                     <div class="form-group ">
                                         <label asp-for="Color"></label>
-                                        <input asp-for="Color" class="form-control" />
+                                        <input readonly="readonly" asp-for="Color" class="form-control" />
                                         <span asp-validation-for="Color"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group ">
                                         <label asp-for="Condition"></label>
-                                        <input asp-for="Condition" class="form-control" />
+                                        <input readonly="readonly" asp-for="Condition" class="form-control" />
                                         <span asp-validation-for="Condition"></span>
                                     </div>
                                 </div>
@@ -102,14 +102,14 @@
                                 <div class="col-md-5">
                                     <div class="form-group ">
                                         <label asp-for="Transmission"></label>
-                                        <input asp-for="Transmission" class="form-control" />
+                                        <input readonly="readonly" asp-for="Transmission" class="form-control" />
                                         <span asp-validation-for="Transmission"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group ">
                                         <label asp-for="Option"></label>
-                                        <input asp-for="Option" class="form-control" />
+                                        <input readonly="readonly" asp-for="Option" class="form-control" />
                                         <span asp-validation-for="Option"></span>
                                     </div>
                                 </div>
@@ -119,14 +119,14 @@
                                 <div class="col-md-5">
                                     <div class="form-group ">
                                         <label asp-for="Year"></label>
-                                        <input asp-for="Year" class="form-control" />
+                                        <input readonly="readonly" asp-for="Year" class="form-control" />
                                         <span asp-validation-for="Year"></span>
                                     </div>
                                 </div>
                                 <div class="col-md-5">
                                     <div class="form-group ">
                                         <label asp-for="Description"></label>
-                                        <input asp-for="Description" class="form-control" type="text" />
+                                        <input readonly="readonly" asp-for="Description" class="form-control" type="text" />
                                         <span asp-validation-for="Description"></span>
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@
                                 <div class="col-md-5">
                                     <div class="form-group">
                                         <label asp-for="Status"></label>
-                                        <input asp-for="Status" type="checkbox" />
+                                        <input  onclick="return false;" asp-for="Status" type="checkbox" />
                                         <span asp-validation-for="Status"></span>
                                     </div>
                                 </div>
@@ -155,8 +155,8 @@
                 <div class="col-md-4 offset-md-5 ">
                     <form asp-action="Delete" method="post">
                         <input type="hidden" asp-for="Id" />
-                        <button class="btn btn-success" type="submit">Delete</button>
-                        <a asp-action="Index" class="btn btn-warning ml-1">Back To List</a>
+                        <button class="btn btn-success btn-sm" type="submit">Delete</button>
+                        <a asp-action="Index" class="btn btn-sm btn-info ml-1">Back To List</a>
                     </form>                 
                 </div>
             </div>
